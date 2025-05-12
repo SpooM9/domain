@@ -1,0 +1,23 @@
+<!--
+  @description       : Holds the html/front facing side of the contactCounterDataTable component
+  @author            : spoorthi.marakkini
+  @last modified on  : 05-11-2025
+  @last modified by  : spoorthi.marakkini@aasw.asn.au
+  @Modifications Log :
+  @Version	Date Modified	ModifiedBy						Description
+  @ V.1		5/11/2025		spoorthi.marakkini@aasw.asn.au	Initial Version - Shows a datatable with aggregated related contacts
+-->
+<template>
+    <div class="slds-align_absolute-center">
+        <lightning-datatable
+            key-field="Type__c"
+            data={contactList}
+            columns={columns}
+            selected-rows={selectedRows}
+            onrowselection={handleRowSelection}>
+        </lightning-datatable>
+    </div>
+    <div class="slds-align_absolute-center slds-p-top_large">
+        <lightning-button label="Save" onclick={handleSave}></lightning-button>
+    </div>
+</template>

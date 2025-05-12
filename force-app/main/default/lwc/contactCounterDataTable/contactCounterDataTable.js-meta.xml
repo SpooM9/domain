@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__RecordAction</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" label="Record Id" type="String" role="inputOnly" description="Holds the object record Id"/>
+            <property name="excludeStates" label="Exclude States" type="String" role="inputOnly" description="Provide contact types that are to be excluded separated by ,"/>
+            <property name="showOnlyStates" label="Show only States" type="String" role="inputOnly" description="Provide states that are only shown separated by ,"/>
+            <property name="excludeTypes" label="Exclude Types" type="String" role="inputOnly" description="Provide contact types that are only shown separated by ,"/>
+            <property name="showOnlyTypes" label="Show only Types" type="String" role="inputOnly" description="Provide contact types that are to be excluded separated by ,"/>
+            <property name="contactTypeList" label= "Selected Rows" role ="outputOnly" type="@salesforce/schema/Contact[]"/>
+        </targetConfig>
+        <targetConfig targets="lightning__AppPage, lightning__RecordPage">
+            <property name="recordId" label="Record Id" type="String" description="Holds the object record Id"/>
+            <property name="excludeStates" label="Exclude States" type="String" description="Provide contact types that are to be excluded separated by ,"/>
+            <property name="showOnlyStates" label="Show only States" type="String" description="Provide states that are only shown separated by ,"/>
+            <property name="excludeTypes" label="Exclude Types" type="String" description="Provide contact types that are only shown separated by ,"/>
+            <property name="showOnlyTypes" label="Show only Types" type="String" description="Provide contact types that are to be excluded separated by ,"/>
+        </targetConfig>
+ </targetConfigs>
+</LightningComponentBundle>

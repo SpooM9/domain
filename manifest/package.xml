@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>ContactCounterController</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Contact.Type__c</members>
+		<members>ContactType_Count__c.Account__c</members>
+		<members>ContactType_Count__c.Contact_Count__c</members>
+		<members>ContactType_Count__c.State__c</members>
+		<members>ContactType_Count__c.Type__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Account</members>
+		<members>Contact</members>
+		<members>ContactType_Count__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Account_Record_Page</members>
+		<name>FlexiPage</name>
+	</types>
+	<types>
+		<members>Contact_Type_Counter_Flow</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>Account-Account Layout</members>
+		<members>ContactType_Count__c-ContactType Count Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>LightningComponentBundle</name>
+	</types>
+	<version>63.0</version>
+</Package>

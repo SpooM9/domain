@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CON001_Cannot_Have_Greater_Than_5</fullName>
+    <active>true</active>
+    <description>Throw an error when the contact count is greater than 5</description>
+    <errorConditionFormula>Contact_Count__c &gt; 5</errorConditionFormula>
+    <errorMessage>Contact Count can not be greater than 5</errorMessage>
+</ValidationRule>
