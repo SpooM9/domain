@@ -1,11 +1,11 @@
 /*********************************************************************************************************
   @description       : Holds the js/controller facing side of the contactCounterDataTable component
   @author            : spoorthi.marakkini
-  @last modified on  : 05-11-2025
+  @last modified on  : 05-12-2025
   @last modified by  : spoorthi.marakkini@aasw.asn.au
   @Modifications Log :
   @Version	Date Modified	ModifiedBy						Description
-  @V.1		5/11/2025		spoorthi.marakkini	Initial Version
+  @V.1		5/11/2025		spoorthi.marakkini	            Initial Version
 ***********************************************************************************************************/
 import { LightningElement, api, track, wire } from 'lwc';
 import getContactList from '@salesforce/apex/ContactCounterController.getContactList';
@@ -37,16 +37,6 @@ export default class ContactCounterDataTable extends LightningElement {
         this.getContactTypeInfo();
     }
 
-    /*@wire(getContactList, {accountId: '$recordId', excludeStates: '$excludeStates', showOnlyStates: '$showOnlyStates', excludeTypes: '$excludeTypes', showOnlyTypes: '$showOnlyTypes'})
-    contacts({error, data}){
-        if(data){
-            this.contactTypeList = data;
-            console.log('this.contactTypeList ::'+this.contactTypeList );
-        }else if(error){
-            console.log(error);
-        }
-    }*/
-
     //Calls the apex controller function to get exisiting contacts to the passed account Id
     getContactTypeInfo(){
         getContactList({accountId: this.recordId, excludeStates: this.excludeStates, showOnlyStates: this.showOnlyStates, excludeTypes: this.excludeTypes, showOnlyTypes: this.showOnlyTypes})
@@ -65,7 +55,6 @@ export default class ContactCounterDataTable extends LightningElement {
 
     //save function called on save button click
     handleSave(){
-        console.log('this.selectedRowVals::'+this.selectedRowVals);
         if(this.selectedRowVals != undefined && this.selectedRowVals != null && this.selectedRowVals.length > 0){
             createContactCountRecords({accountId: this.recordId, contactInfo: JSON.stringify(this.selectedRowVals)})
             .then(result => {
